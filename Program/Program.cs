@@ -17,6 +17,23 @@ void PrintArray(string[] array)
     Console.WriteLine();
 }
 
+string[] FillResultArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            Array.Resize(ref resultArray, resultArray.Length + 1);
+            resultArray[resultArray.Length - 1] = array[i];
+        }
+    }
+    return resultArray;
+}
+
+
+
 PrintArray(array);
 PrintArray(digitalArray);
+PrintArray(resultArray);
+resultArray = FillResultArray(array);
 PrintArray(resultArray);
