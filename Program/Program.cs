@@ -1,9 +1,7 @@
-﻿// Second commit 
-
+﻿
 string[] array = new string[] { "a", "bb", "ccc", "dddd", "eeeee", "fff" };
 string[] digitalArray = new string[] { "1", "22", "333", "4444", "55555", "4444", "333", "22", "1" };
-string[] resultArray = new string[0];
-
+string[] bigArray = new string[]{"9999999","999999999999","000000000000000"};
 
 void PrintArray(string[] array)
 {
@@ -19,6 +17,7 @@ void PrintArray(string[] array)
 
 string[] FillResultArray(string[] array)
 {
+    string[] resultArray = new string[0];
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length <= 3)
@@ -30,10 +29,20 @@ string[] FillResultArray(string[] array)
     return resultArray;
 }
 
+void PrintResult(string[] array)
+{
+    Console.WriteLine();
+    Console.Write($"[ ");
 
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + "; ");
+    }
+    Console.Write("] -> ");
+    PrintArray(FillResultArray(array));
+    
+}
 
-PrintArray(array);
-PrintArray(digitalArray);
-PrintArray(resultArray);
-resultArray = FillResultArray(array);
-PrintArray(resultArray);
+PrintResult(array);
+PrintResult(digitalArray);
+PrintResult(bigArray);
